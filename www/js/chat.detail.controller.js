@@ -1,5 +1,9 @@
 angular.module('myad5')
-  .controller('ChatDetailCtrl', function ($stateParams, $timeout, $sanitize, Chats, Backand, Messages, $ionicScrollDelegate) {
+  .controller('ChatDetailCtrl',ChatDetailCtrl );
+  
+  ChatDetailCtrl.$inject = ['$stateParams', '$timeout', '$sanitize', 'Chats', 'Backand', 'Messages', '$ionicScrollDelegate'];
+  
+  function ChatDetailCtrl($stateParams, $timeout, $sanitize, Chats, Backand, Messages, $ionicScrollDelegate) {
     var self = this
     var typing = false
     var lastTypingTime
@@ -93,4 +97,4 @@ angular.module('myad5')
     }
 
     init()
-  })
+  }

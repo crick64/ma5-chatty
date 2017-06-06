@@ -1,4 +1,8 @@
-angular.module("myad5").controller("ChatsCtrl", function(Chats) {
+angular.module("myad5").controller("ChatsCtrl", ChatsCtrl);
+
+ChatsCtrl.$inject = ['Chats'];
+
+function ChatsCtrl(Chats) {
   var self = this;
 
   // Add chat and refresh the list
@@ -21,4 +25,4 @@ angular.module("myad5").controller("ChatsCtrl", function(Chats) {
   }
 
   init();
-});
+}
