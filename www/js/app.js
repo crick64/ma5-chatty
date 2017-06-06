@@ -27,12 +27,24 @@ angular.module('myad5', ['ionic', 'backand', 'ngSanitize'])
       templateUrl: 'templates/tabs.html'
     })
 
+    // Settings
+    .state('tab.settings', {
+      url: '/settings',
+      views: {
+        'tab-settings': {
+          templateUrl: 'templates/tab-settings.html',
+          controller: 'ChatsCtrl as vm'
+        }
+      }
+    })
+
+    // Chats
     .state('tab.chats', {
       url: '/chats',
       views: {
         'tab-chats': {
           templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl as chats'
+          controller: 'ChatsCtrl as vm'
         }
       }
     })
@@ -41,7 +53,7 @@ angular.module('myad5', ['ionic', 'backand', 'ngSanitize'])
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl as chatDetail'
+          controller: 'ChatDetailCtrl as vm'
         }
       }
     });

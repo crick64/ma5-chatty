@@ -17,7 +17,7 @@ angular.module('myad5')
     // The action is configured in the Backand app
     self.sendMessage = function () {
       Messages.post($sanitize(self.chat.newMessage), $stateParams.chatId)
-      socket.emit('stop typing')
+      //socket.emit('stop typing')
       self.chat.newMessage = ''
     }
 
@@ -34,21 +34,21 @@ angular.module('myad5')
     self.updateTyping = sendUpdateTyping
 
     function sendUpdateTyping () {
-      if (!typing) {
-        typing = true
-        socket.emit('typing')
-      }
+      // if (!typing) {
+      //   typing = true
+      //   socket.emit('typing')
+      // }
 
-      lastTypingTime = (new Date()).getTime()
+      // lastTypingTime = (new Date()).getTime()
 
-      $timeout(function () {
-        var typingTimer = (new Date()).getTime()
-        var timeDiff = typingTimer - lastTypingTime
-        if (timeDiff >= TYPING_TIMER_LENGTH && typing) {
-          socket.emit('stop typing')
-          typing = false
-        }
-      }, TYPING_TIMER_LENGTH)
+      // $timeout(function () {
+      //   var typingTimer = (new Date()).getTime()
+      //   var timeDiff = typingTimer - lastTypingTime
+      //   if (timeDiff >= TYPING_TIMER_LENGTH && typing) {
+      //     socket.emit('stop typing')
+      //     typing = false
+      //   }
+      // }, TYPING_TIMER_LENGTH)
     }
 
     // Generate color for the same user.

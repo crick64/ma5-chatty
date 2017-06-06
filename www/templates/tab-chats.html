@@ -1,36 +1,34 @@
-<ion-view view-title="Chats">
+<ion-view view-title="Myad5 - Chatty">
   <ion-content>
-    <div ng-if="!chats.isCreating">
+    <div ng-if="!vm.isCreating">
       <div class="bar bar-header">
-        <span ng-click="chats.isCreating = true"><i class='icon ion-plus-round new-item'> New Chat</i></span>
+        <span ng-click="vm.isCreating = true"><i class='icon ion-plus-round new-item'> New</i></span>
       </div>
       <ion-list class="chat-subheader">
-        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats.chats"
-                  type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in vm.chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
           <h2>{{chat.name}}</h2>
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
       </ion-list>
     </div>
 
-    <div ng-if="chats.isCreating">
+    <div ng-if="vm.isCreating">
       <ion-content class="padding has-header">
         <div class="bar bar-header">
-          <span ng-click="chats.cancelCreate()" class="cancel-create">Cancel</span>
-          <h2 class="title">Create Chat</h2>
+          <span ng-click="vm.cancelCreate()" class="cancel-create">Cancel</span>
+          <h2 class="title">Create/Join Chat</h2>
         </div>
         <div class="chat-subheader">
-          <form class="create-form" role="form"
-                ng-submit="chats.create(chats.newChatName)" novalidate>
+          <form class="create-form" role="form" ng-submit="vm.create(vm.newChatPassCode)" novalidate>
             <div class="list">
               <label class="item item-input item-stacked-label">
-                <span class="input-label">Name</span>
+                <span class="input-label">Passcode</span>
                 <input type="text" class="form-control"
-                       ng-model="chats.newChatName"
-                       placeholder="Enter name">
+                       ng-model="vm.newChatPassCode"
+                       placeholder="Enter a passcode">
               </label>
             </div>
-            <button class="button button-block button-positive" type="submit">Create</button>
+            <button class="button button-block button-positive" type="submit">Take me in</button>
           </form>
         </div>
       </ion-content>
