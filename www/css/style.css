@@ -1,1 +1,61 @@
-/* Empty. Add your own CSS if you like */
+.chat-detail-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+.messages-area {
+  width: 100%;
+  max-height: 93%;
+}
+.new-message {
+  order: 2;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  border: 0;
+}
+.new-message label {
+  width: 100%;
+  border: 0;
+}
+.new-message form {
+  width: 100%;
+}
+.message-input {
+  display: inline;
+  width: 100%;
+  border: 1px #bebebe solid !important;
+}
+.new-message button {
+  display: inline;
+  width: 50px;
+}
+
+.scroll {
+  min-height: 100%;
+}
+
+.submit-message {
+  font-size: 12px !important;
+}
+
+.icon.new-item {
+  position: absolute;
+  right: 20px;
+  width: 70px;
+  font-size: 12px;
+  bottom: 13px;
+}
+
+.chat-subheader {
+  top: 44px;
+  position: relative;
+}
+
+.cancel-create {
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+  bottom: 13px;
+  color: #ef4e3a;
+  z-index: 1;
+}

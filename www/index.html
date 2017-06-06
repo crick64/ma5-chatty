@@ -5,17 +5,6 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link rel="manifest" href="manifest.json">
-
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -29,17 +18,38 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+    <!-- Backand Socket.io Client -->
+    <script src="https://cdn.backand.net/socket.io/1.4.5/socket.io.js"></script>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+    <!-- Other Libraries-->
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>    
+
+    <!-- Backand SDK for Angular -->
+    <script src="lib/backand-vanilla-sdk/dist/backand.js"></script>
+    <script src="lib/backand-angular1-sdk/dist/backand.provider.js"></script>
+
+    <!--<script src="http://cdn.backand.net/vanilla-sdk/1.2.3/backand.js"></script>
+    <script src="http://cdn.backand.net/angular1-sdk/2.0.3/backand.provider.js"></script>-->
+
+    <!-- app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/chat.controller.js"></script>
+    <script src="js/chat.detail.controller.js"></script>
+    <script src="js/services.js"></script>
+  </head>
+  <body ng-app="myad5">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
   </body>
 </html>
